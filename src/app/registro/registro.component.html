@@ -14,9 +14,7 @@
 <input type="text">
 <select>
     <option value="Selecciona">Selecciona</option>
-    <option>Producto 1</option>
-    <option>Producto 2</option>
-    <option>Producto 3</option>
+    <option *ngFor="let prod of listadoProductos" value="{{prod.id}}" >{{prod.descripcion}}</option>
 </select>
 <button class="button">Ingresar</button>
 <br/><br/>
