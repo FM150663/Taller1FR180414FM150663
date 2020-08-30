@@ -3,22 +3,22 @@
     <p>Ingrese los datos de las ventas</p>    
     <p>Productos dispobibles:</p>
     <ul id="horizontal-list">
-        <li>Producto 1</li>
-        <li>Producto 2</li>
-        <li>Producto 3</li>
+        <li *ngFor="let prod of listadoProductos" >
+            {{prod.descripcion}}
+        </li>
     </ul>
 </div>    
 <label>Cliente:</label>
-<input type="text">
+<input type="text" [(ngModel)]="nombre">
 <label>Dui:</label>
-<input type="text">
-<select>
-    <option value="Selecciona">Selecciona</option>
+<input type="text" [(ngModel)]="dui">
+<select [(ngModel)]="opcionSeleccionado"> 
+    <option value="Selecciona" selected="selected">Selecciona</option>
     <option *ngFor="let prod of listadoProductos" value="{{prod.id}}" >{{prod.descripcion}}</option>
 </select>
-<button class="button">Ingresar</button>
+<button class="button" (click)="ingresarVenta()">Ingresar</button>
 <br/><br/>
-<table >
+<table [hidden]="contador == 0">
     <thead>
         <tr>
             <th>Cliente</th>
@@ -26,15 +26,17 @@
             <th>Código producto</th>
             <th>Descripción Producto</th>
             <th>Precio</th>
+            <th>Descuento</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td> 
+        <tr *ngFor="let compra of listadoCompras">
+            <td>{{compra.nombre}}</td>
+            <td>{{compra.dui}}</td>
+            <td>{{compra.codProducto}}</td>
+            <td>{{compra.descProducto}}</td>
+            <td>{{compra.precioProducto}}</td> 
+            <td>{{compra.descuento}}%</td>
         </tr>
     </tbody>
 </table>
