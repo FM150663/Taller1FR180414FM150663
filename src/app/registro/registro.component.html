@@ -3,7 +3,7 @@
     <p>Ingrese los datos de las ventas</p>    
     <p>Productos dispobibles:</p>
     <ul id="horizontal-list">
-        <li *ngFor="let prod of listadoProductos" >
+        <li *ngFor="let prod of inventario" >
             {{prod.descripcion}}
         </li>
     </ul>
@@ -14,7 +14,7 @@
 <input type="text" [(ngModel)]="dui">
 <select [(ngModel)]="opcionSeleccionado"> 
     <option value="Selecciona" selected="selected">Selecciona</option>
-    <option *ngFor="let prod of listadoProductos" value="{{prod.id}}" >{{prod.descripcion}}</option>
+    <option *ngFor="let prod of inventario" value="{{prod.id}}" >{{prod.descripcion}}</option>
 </select>
 <button class="button" (click)="ingresarVenta()">Ingresar</button>
 <br/><br/>

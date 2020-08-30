@@ -1,3 +1,11 @@
+.header {
+    padding: 40px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -18,13 +26,7 @@ input,select {
 label{
     font-size: 2vw;
 }
-.header {
-    padding: 40px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-}
+
 
 table, th, td{
     border: 1px solid black;

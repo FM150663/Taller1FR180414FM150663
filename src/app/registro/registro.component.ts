@@ -14,7 +14,7 @@ export class RegistroComponent implements OnInit {
   producto3:any;
   producto4:any;
   producto5:any;
-  listadoProductos=[];
+  inventario=[];
   listadoCompras=[]
   compra:any;
   nombre:string;
@@ -32,11 +32,11 @@ export class RegistroComponent implements OnInit {
     this.producto3={"id":2,"codigo":"PROD003","descripcion":"Huevos","precio":1.00};
     this.producto4={"id":3,"codigo":"PROD004","descripcion":"Carne Congelada","precio":2.00};
     this.producto5={"id":4,"codigo":"PROD005","descripcion":"Arroz","precio":0.50};
-    this.listadoProductos.push(this.producto1);
-    this.listadoProductos.push(this.producto2);
-    this.listadoProductos.push(this.producto3);
-    this.listadoProductos.push(this.producto4);
-    this.listadoProductos.push(this.producto5);
+    this.inventario.push(this.producto1);
+    this.inventario.push(this.producto2);
+    this.inventario.push(this.producto3);
+    this.inventario.push(this.producto4);
+    this.inventario.push(this.producto5);
     this.nombre="";
     this.dui="";
     this.contador=0;
@@ -45,9 +45,9 @@ export class RegistroComponent implements OnInit {
 
   ingresarVenta(){    
     this.compra={"nombre":this.nombre,"dui":this.dui,
-      "codProducto":this.listadoProductos[this.opcionSeleccionado].codigo,
-      "descProducto":this.listadoProductos[this.opcionSeleccionado].descripcion,
-      "precioProducto":this.listadoProductos[this.opcionSeleccionado].precio,
+      "codProducto":this.inventario[this.opcionSeleccionado].codigo,
+      "descProducto":this.inventario[this.opcionSeleccionado].descripcion,
+      "precioProducto":this.inventario[this.opcionSeleccionado].precio,
       "descuento":0};
     this.listadoCompras.push(this.compra); 
     this.contador++; 
